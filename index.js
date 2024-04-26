@@ -1,4 +1,3 @@
-const http = require("http");
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
@@ -11,8 +10,7 @@ const PORT = 8000;
 
 // connection
 connectMongoDb("mongodb://127.0.0.1:27017/login-users")
-
-//schema
+.then(()=>{console.log(`mongodb connected`);})
 
 //body parser
 app.use(bodyParser.urlencoded({ extended: false }));
